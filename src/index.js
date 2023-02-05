@@ -16,14 +16,16 @@ const router = createBrowserRouter([
   {
     path: "/gamoo/",
     element: <Home/>,
+    children: [
+      {
+        path: "connexion",
+        element: <Connexion/>,
+      },
+    ],
   },
   {
     path: "/messagerie",
     element: <Messagerie/>,
-  },
-  {
-    path: "/gamoo/connexion",
-    element: <Connexion/>,
   },
   {
     path: "/inscription",
