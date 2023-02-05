@@ -7,25 +7,23 @@ import Connexion from './pages/Connexion';
 import Inscription from './pages/Inscription';
 import Profil from './pages/Profil';
 import reportWebVitals from './reportWebVitals';
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/gamoo",
     element: <Home/>,
-    children: [
-      {
-        path: "connexion",
-        element: <Connexion/>,
-      },
-    ],
   },
   {
     path: "/messagerie",
     element: <Messagerie/>,
+  },
+  {
+    path: "connexion",
+    element: <Connexion/>,
   },
   {
     path: "/inscription",
