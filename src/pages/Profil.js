@@ -10,8 +10,8 @@ function Profil() {
     const [friends, setFriends] = useState([]);
 
     useEffect(() => {
-		axios.get(`http://gamoo.alwaysdata.net/profil/${id}`).then(res => {setUser(res.data[0]);});
-        axios.get(`http://gamoo.alwaysdata.net/medias/${id}`).then(res => {setMedias(res.data);});
+		axios.get(`https://gamoo.alwaysdata.net/profil/${id}`).then(res => {setUser(res.data[0]);});
+        axios.get(`https://gamoo.alwaysdata.net/medias/${id}`).then(res => {setMedias(res.data);});
         axios.get(`http://localhost:3001/friends/${id}`).then(res => {setFriends(res.data);});
     }, [id]);
 
