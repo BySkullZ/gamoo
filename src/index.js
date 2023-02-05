@@ -14,7 +14,7 @@ import "bootstrap";
 
 const router = createBrowserRouter([
   {
-    path: "/gamoo/",
+    path: "/gamoo",
     element: <Home/>,
     children: [
       {
