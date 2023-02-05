@@ -44,7 +44,7 @@ function Navbar() {
                             }
                             {user.length === 0 &&
                                 <li className="nav-item">
-                                    <a className="nav-link active" id="button" aria-current="page" href="/gamoo/connexion">Se connecter</a>
+                                    <a className="nav-link active" id="button" aria-current="page" href="/connexion">Se connecter</a>
                                 </li>
                             }
                             {user.length === 0 &&

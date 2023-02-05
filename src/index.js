@@ -14,15 +14,15 @@ import "bootstrap";
 
 const router = createBrowserRouter([
   {
-    path: "gamoo/#/",
+    path: "/",
     element: <Home/>,
   },
   {
-    path: "gamoo/#/messagerie",
+    path: "/messagerie",
     element: <Messagerie/>,
   },
   {
-    path: "gamoo/connexion",
+    path: "/connexion",
     element: <Connexion/>,
   },
   {
