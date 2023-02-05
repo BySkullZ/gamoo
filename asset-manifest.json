@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/gamoo/static/css/main.4ed5dd1f.css",
-    "main.js": "/gamoo/static/js/main.b2f9c1f1.js",
+    "main.js": "/gamoo/static/js/main.c709c327.js",
     "static/js/787.5a49ef83.chunk.js": "/gamoo/static/js/787.5a49ef83.chunk.js",
     "static/media/Gugi-Regular.ttf": "/gamoo/static/media/Gugi-Regular.ce160b04cc5caef3bf46.ttf",
     "static/media/oeil_ferme.png": "/gamoo/static/media/oeil_ferme.3fafc498f6823caef205.png",
     "static/media/logo_navbar.png": "/gamoo/static/media/logo_navbar.bc5d20715dbfb240fed0.png",
     "index.html": "/gamoo/index.html",
     "main.4ed5dd1f.css.map": "/gamoo/static/css/main.4ed5dd1f.css.map",
-    "main.b2f9c1f1.js.map": "/gamoo/static/js/main.b2f9c1f1.js.map",
+    "main.c709c327.js.map": "/gamoo/static/js/main.c709c327.js.map",
     "787.5a49ef83.chunk.js.map": "/gamoo/static/js/787.5a49ef83.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4ed5dd1f.css",
-    "static/js/main.b2f9c1f1.js"
+    "static/js/main.c709c327.js"
   ]
 }
