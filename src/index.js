@@ -14,7 +14,7 @@ import "bootstrap";
 
 const router = createHashRouter([
   {
-    path: "/gamoo",
+    path: "/",
     element: <Home/>,
   },
   {
