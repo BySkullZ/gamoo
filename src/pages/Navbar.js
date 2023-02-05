@@ -9,7 +9,7 @@ function Navbar() {
 
     useEffect(() => {
         async function getData() {
-            const res = await axios.get(`http://gamoo.alwaysdata.net/profil/${localStorage.getItem("userId")}`);
+            const res = await axios.get(`https://gamoo.alwaysdata.net/profil/${localStorage.getItem("userId")}`);
             setUser(res.data[0]);
         }
         if (localStorage.getItem("userId")) {

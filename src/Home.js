@@ -11,7 +11,7 @@ function Home() {
   console.log(user);
 
   useEffect(() => {
-		axios.get(`http://gamoo.alwaysdata.net/profil/${localStorage.getItem("userId") || 0}`).then(res => {setUser(res.data[0]);});
+		axios.get(`https://gamoo.alwaysdata.net/profil/${localStorage.getItem("userId") || 0}`).then(res => {setUser(res.data[0]);});
     }, []);
 
   return (

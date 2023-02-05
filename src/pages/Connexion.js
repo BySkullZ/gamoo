@@ -12,7 +12,7 @@ function Connexion() {
     const [showPassword, setShowPassword] = useState(false);
 
     async function logIn() {
-        const res = await axios.post(`http://gamoo.alwaysdata.net/user/`, {mail_user: state["mail_user"], password_user: state["password_user"]});
+        const res = await axios.post(`https://gamoo.alwaysdata.net/user/`, {mail_user: state["mail_user"], password_user: state["password_user"]});
         if (res.data.length > 0) {
             localStorage.setItem("userId", res.data[0].id_user)
             navigate(`/`);
