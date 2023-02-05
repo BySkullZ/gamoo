@@ -22,7 +22,7 @@ const router = createBrowserRouter([
     element: <Messagerie/>,
   },
   {
-    path: "/connexion",
+    path: "/gamoo/connexion",
     element: <Connexion/>,
   },
   {
