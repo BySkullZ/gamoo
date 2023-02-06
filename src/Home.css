@@ -53,6 +53,7 @@ body {
   max-height: 0;
   color: black;
   align-items: left;
+  list-style: none;
 }
 
 .sous-menu > li > a {
@@ -133,12 +134,12 @@ nav > ul > li:hover > a{
 
 /* Profil */
 
-.profil_picture {
+.profil-picture {
   width: 100px;
   border-radius: 100%;
 }
 
-.profil_banner {
+.profil-banner {
   background-color: grey;
   background-repeat: no-repeat;
   background-size: cover;
@@ -146,9 +147,13 @@ nav > ul > li:hover > a{
   height: 200px;
 }
 
-.profil_media {
+.profil-media {
   max-width: 200px;
   max-height: 100px;
+}
+
+.profil-friend-list {
+  list-style: none;
 }
 
 /* Home */
