@@ -158,7 +158,7 @@ nav > ul > li:hover > a{
 .mail-input {
   margin: auto;
   line-height: 40px;
-  min-width: 50%;
+  width: 50%;
 }
 
 .password-input {

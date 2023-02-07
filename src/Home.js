@@ -5,9 +5,6 @@ import Navbar from './pages/Navbar.js';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
-
 function Home() {
 	const [user, setUser] = useState([]);
 	const [formVisible, setFormVisible] = useState(false);

@@ -90,6 +90,7 @@ function Inscription() {
             const styleIndexToRemove = state["styles"].findIndex((el) => el === e);
             state["styles"].splice(styleIndexToRemove, 1);
         }
+        document.getElementById("styles").innerHTML = (state["styles"].length > 0 && state["styles"].join(", ")) || "Selectionnez des styles de jeux"
     }
 
     function nextStep(currStep) {
@@ -215,7 +216,7 @@ function Inscription() {
                                 </div>
                                 <h2 className="text-decoration-underline fs-3">Styles de jeux</h2>
                                 <div>
-                                    <button onClick={() => setDropdownSVisible(!dropdownSVisible)} className="dropdown-button w-75" type="text">{state["styles"].join(", ") || "Selectionnez des styles de jeu"}</button>
+                                    <button onClick={() => setDropdownSVisible(!dropdownSVisible)} className="dropdown-button w-75" type="text" id="styles">Selectionnez des styles de jeux</button>
                                 </div>
                                 <ul className={`dropdown mb-5 ${!dropdownSVisible && "dropdown-hidden"} w-75 mx-auto`}>
                                     {styles.map((style, index) => {
