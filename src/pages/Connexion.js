@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Navbar from "./Navbar";
@@ -12,7 +12,7 @@ function Connexion() {
     const [showPassword, setShowPassword] = useState(false);
 
     async function logIn() {
-        const res = await axios.post(`https://gamoo.alwaysdata.net/user/`, state);
+        const res = await axios.post(`https://gamoo.alwaysdata.net/login/`, state);
         if (res.data.length > 0) {
             localStorage.setItem("userId", res.data[0].id_user)
             navigate(`/`);
@@ -43,7 +43,7 @@ function Connexion() {
             <Navbar/>
             <div className="d-flex">
                 <div className="connexion-card ms-auto w-50 font-gugi">
-                    <div className="bg-yellow py-2 mb-4">
+                    <div className="bg-light-yellow py-2 mb-4 rounded-2">
                         <h1 className="text-decoration-underline mx-auto mt-2 mb-5">Connexion</h1>
                         {/* ajouter le span underline sur le css */}
                         <h2 className="text-decoration-underline mx-auto fs-3">Mail*</h2>
@@ -53,7 +53,7 @@ function Connexion() {
                         <h3 className="text-decoration-underline mx-auto fs-3">Mot de passe*</h3>
                         <div className="mb-5">
                             <input onChange={handleChange} className="password-input" type="password" id="password" name="password_user" minLength="8" required/>
-                            <img id="eye" src={showPassword ? oeil_ferme : oeil_ouvert} onClick={handleClick}/>
+                            <img id="eye" src={showPassword ? oeil_ferme : oeil_ouvert} alt="" onClick={handleClick}/>
                         </div>
                         {error && <div className="w-75 mx-auto mt-4 alert alert-danger" role="alert">{error}</div>}
                     </div>

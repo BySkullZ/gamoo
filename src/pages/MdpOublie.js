@@ -1,19 +1,15 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import * as Icon from 'react-bootstrap-icons';
 import axios from "axios";
 import Navbar from "./Navbar";
-import oeil_ouvert from "../images/oeil_ouvert.png"
-import oeil_ferme from "../images/oeil_ferme.png"
 
 function MdpOublie() {
-    const navigate = useNavigate();
     const [success, setSuccess] = useState(false);
     const [dropdownVisible, setDropdownVisible] = useState(false);
     const [questions, setQuestions] = useState([]);
     const [error, setError] = useState("");
     const [state, setState] = useState({mail_user: "", id_question: 1, answer_user: ""});
-    const [showPassword, setShowPassword] = useState(false);
 
     useEffect(() => {
         async function getData() {
@@ -23,11 +19,16 @@ function MdpOublie() {
         getData();
     }, [questions]);
 
+    function sendMail() {
+
+    }
+
     async function validate() {
         const res = await axios.post(`https://gamoo.alwaysdata.net/password-forgot/`, state);
         console.log(res);
         if (res.data.length > 0) {
             setSuccess(true);
+            sendMail()
         } else {
             setError("Mail ou question secrète incorrect.");
         }
@@ -44,7 +45,8 @@ function MdpOublie() {
     function handleClick(index){
         if (index !== undefined) {
             document.getElementById("question_button").innerHTML = questions[index].content_question;
-            setState({...state, ["id_question"]: index+1});
+            setState({...state, "id_question": index+1});
+            setDropdownVisible(false);
         } else {
             validate()
         }
@@ -59,7 +61,7 @@ function MdpOublie() {
             <div>
                 <Navbar/>
                 <div className="connexion-card mx-auto w-50 font-gugi">
-                    <div className="bg-yellow py-2">
+                    <div className="bg-light-yellow py-2 rounded-2">
                         <h1 className="text-decoration-underline mx-auto mt-2 mb-5">Mot de passe <br/>Oublié</h1>
                         <p className="fs-2 mx-3 mb-5">Jette un coup d'oeil à tes mails, tu vas recevoir une demande de réinitialisation ! :)</p>
                         <Link to="/connexion" className="text-decoration-none ms-auto">
@@ -75,7 +77,7 @@ function MdpOublie() {
         <div>
             <Navbar/>
             <div className="connexion-card mx-auto w-75 font-gugi">
-                <div className="bg-yellow py-2">
+                <div className="bg-light-yellow py-2 rounded-2">
                     <h1 className="text-decoration-underline mx-auto mt-2 mb-5">Mot de passe <br/>Oublié</h1>
                     {/* ajouter le span underline sur le css */}
                     <h2 className="text-decoration-underline mx-auto fs-3">Mail*</h2>

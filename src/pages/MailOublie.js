@@ -1,23 +1,20 @@
-import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import * as Icon from 'react-bootstrap-icons';
 import axios from "axios";
 import Navbar from "./Navbar";
-import oeil_ouvert from "../images/oeil_ouvert.png"
-import oeil_ferme from "../images/oeil_ferme.png"
 
 function MailOublie() {
-    const navigate = useNavigate();
     const [error, setError] = useState("");
-    const [state, setState] = useState({mail_user: "", password_user: ""});
-    const [showPassword, setShowPassword] = useState(false);
+    const [success, setSuccess] = useState(false);
+    const [state, setState] = useState({mail_backup_user: "", password_user: ""});
 
-    async function logIn() {
-        const res = await axios.post(`https://gamoo.alwaysdata.net/user/`, {mail_user: state["mail_user"], password_user: state["password_user"]});
+    async function validate() {
+        const res = await axios.post(`https://gamoo.alwaysdata.net/mail-forgot/`, state);
         if (res.data.length > 0) {
-            localStorage.setItem("userId", res.data[0].id_user)
-            navigate(`/`);
+            setSuccess(true);
         } else {
-            setError("Nom d'utilisateur ou mot de passe incorrect.")
+            setError("Combinaison incorrecte.")
         }
     }
 
@@ -27,44 +24,44 @@ function MailOublie() {
             ...state,
             [e.target.name]: value
         });
+        console.log(state);
     }
 
-    function handleClick(){
-        if(!showPassword) {
-            document.getElementById("password").setAttribute("type", "text");
-        }
-        else{
-            document.getElementById("password").setAttribute("type", "password");
-        }
-        setShowPassword(!showPassword);
+    if (success) {
+        return (
+            <div>
+                <Navbar/>
+                <div className="connexion-card mx-auto w-50 font-gugi">
+                    <div className="bg-light-yellow py-2 rounded-2">
+                        <h1 className="text-decoration-underline mx-auto mt-2 mb-5">Mail <br/>Oublié</h1>
+                        <p className="fs-2 mx-3 mb-5">Jette un coup d'oeil à tes mails, tu vas recevoir une demande pour te connecter ! :)</p>
+                        <Link to="/connexion" className="text-decoration-none ms-auto">
+                            <p className="me-3 mt-5 mb-1 login-button">Retour <Icon.CaretRightFill className="text-yellow"/></p>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        )
     }
+
     return (
         <div>
             <Navbar/>
-            <div className="d-flex">
-                <div className="connexion-card ms-auto w-50 font-gugi">
-                    <div className="bg-yellow py-2 mb-4">
-                        <h1 className="text-decoration-underline mx-auto mt-2 mb-5">Mot de passe Oublié</h1>
-                        {/* ajouter le span underline sur le css */}
-                        <h2 className="text-decoration-underline mx-auto fs-3">Mail*</h2>
-                        <div className="mb-5">
-                            <input onChange={handleChange} className="mail-input" type="email" id="mail" name="mail_user" required/>
-                        </div>
-                        <h3 className="text-decoration-underline mx-auto fs-3">Mot de passe*</h3>
-                        <div className="mb-5">
-                            <input onChange={handleChange} className="password-input" type="password" id="password" name="password_user" minLength="8" required/>
-                            <img id="eye" src={showPassword ? oeil_ferme : oeil_ouvert} onClick={handleClick}/>
-                        </div>
-                        {error && <div className="w-75 mx-auto mt-4 alert alert-danger" role="alert">{error}</div>}
+            <div className="connexion-card mx-auto w-50 font-gugi">
+                <div className="bg-light-yellow py-2 rounded-2">
+                    <h1 className="text-decoration-underline mx-auto mt-2 mb-5">Mail Oublié</h1>
+                    {/* ajouter le span underline sur le css */}
+                    <h2 className="text-decoration-underline text-start ms-5 fs-3">Mail de secours*</h2>
+                    <div className="mb-5">
+                        <input onChange={handleChange} className="mail-input w-75" type="email" id="mail" name="mail_backup_user" placeholder="Ecrire votre mail" required/>
                     </div>
-                    <Link to="/mdp-oublie" className="text-yellow fs-3">
-                        <p>Mot de passe oublié ?</p>
-                    </Link>
-                    <Link to="/mail-oublie" className="text-yellow fs-3">
-                        <p>Mail oublié ?</p>
-                    </Link>
+                    <h3 className="text-decoration-underline text-start ms-5 fs-3">Mot de passe*</h3>
+                    <div className="mb-5">
+                        <input onChange={handleChange} className="password-input w-75" type="password" id="password" name="password_user" placeholder="Ecrire votre mot de passe" minLength="8" required/>
+                    </div>
+                    {error && <div className="alert alert-danger w-75 mx-auto mb-5" role="alert">{error}</div>}
+                    <button onClick={() => validate()} className="me-auto ms-3 mt-auto mb-4 login-button">Recherche<Icon.CaretRightFill className="text-yellow"/></button>
                 </div>
-                <button onClick={logIn} className="me-auto ms-2 mt-auto login-button" type="submit">Connexion<span className="text-yellow">&gt;</span></button>
             </div>
         </div>
     )

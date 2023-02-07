@@ -6,7 +6,9 @@ import Messagerie from './pages/Messagerie';
 import Connexion from './pages/Connexion';
 import MdpOublie from './pages/MdpOublie';
 import MailOublie from './pages/MailOublie';
+import ReinitialiserMdp from './pages/ReinitialiserMdp';
 import Inscription from './pages/Inscription';
+import ConfirmerInscription from './pages/ConfirmerInscription';
 import Profil from './pages/Profil';
 import reportWebVitals from './reportWebVitals';
 import { createHashRouter, RouterProvider } from "react-router-dom";
@@ -36,8 +38,16 @@ const router = createHashRouter([
     element: <MailOublie/>,
   },
   {
+    path: "/reinitialiser-mdp/:token",
+    element: <ReinitialiserMdp/>,
+  },
+  {
     path: "/inscription",
     element: <Inscription/>,
+  },
+  {
+    path: "/confirmer-inscription/:token",
+    element: <ConfirmerInscription/>,
   },
   {
     path: "/profil/:id",

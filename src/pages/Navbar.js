@@ -56,7 +56,7 @@ function Navbar() {
                             }
                             {user.length === 0 &&
                                 <li className="nav-item">
-                                    <Link to="/inscription" className="text-decoration-none">
+                                    <Link to="/inscription" onClick={() => window.location.reload()} className="text-decoration-none">
                                         <p className="nav-link active mb-0" id="button" aria-current="page">S'inscrire</p>
                                     </Link>
                                 </li>
