@@ -13,9 +13,11 @@ function Connexion() {
 
     async function logIn() {
         const res = await axios.post(`https://gamoo.alwaysdata.net/login/`, state);
-        if (res.data.length > 0) {
+        if (res.data.length > 0 && res.data[0].verified === 1) {
             localStorage.setItem("userId", res.data[0].id_user)
             navigate(`/`);
+        } else if (res.data[0].verified === 0) {
+            setError("Compte non validé par mail. Veuillez verifier vos mails !")
         } else {
             setError("Nom d'utilisateur ou mot de passe incorrect.")
         }
