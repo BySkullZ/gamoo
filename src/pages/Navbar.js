@@ -14,7 +14,7 @@ function Navbar() {
         if (localStorage.getItem("userId")) {
             getData();
         }
-    }, [user]);
+    }, []);
 
     function logOut() {
         localStorage.removeItem("userId");
@@ -26,7 +26,9 @@ function Navbar() {
         <div className="navc">
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid">
-                    <a href="/"><img className="logonav" src={logo_navbar} alt=""/></a>
+                    <Link to="/" className="">
+                        <img className="logonav" src={logo_navbar} alt=""/>
+                    </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                     </button>

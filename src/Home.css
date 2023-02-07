@@ -7,11 +7,15 @@ body {
 }
 
 .font-gugi {
-  font-family: "Gugi";
+  font-family: "Gugi" !important;
 }
 
 .text-blue {
   color: #030A4B;
+}
+
+.text-yellow {
+  color: #FFB82F;
 }
 
 .text-shadow-yellow {
@@ -20,6 +24,10 @@ body {
 
 .bg-blue {
   background-color: #030A4B;
+}
+
+.bg-yellow {
+  background-color: #FFD27A !important;
 }
 
 /* Navbar */
@@ -128,8 +136,80 @@ nav > ul > li:hover > a{
 
 /* Connexion */
 
+.connexion-card {
+  text-align: center;
+  margin-top: 7%;
+}
+
+.connexion-card h1 {
+  font-size: 7vmin;
+}
+
+.input {
+  margin: auto;
+  line-height: 40px;
+  width: 50%;
+}
+
+.mail-input {
+  margin: auto;
+  line-height: 40px;
+  min-width: 50%;
+}
+
+.password-input {
+  line-height: 40px;
+  width: 45%;
+}
+
+.dropdown {
+  background: white;
+  display: block;
+  border-radius: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.dropdown-hidden {
+  display: none;
+}
+
+.dropdown-button {
+  line-height: 40px;
+  background: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color: gray;
+}
+
+.dropdown-button-select button {
+  line-height: 30px;
+  background: none;
+  border: none;
+}
+
+.dropdown-button-select:hover {
+  border: solid;
+  border-radius: 10px;
+  border-color: gray;
+  border-width: 1px;
+  background-color: whitesmoke;
+}
+
 #eye {
-  width: 30px;
+  width: 5%;
+  min-width: 30px;
+}
+
+.login-button {
+  background: none;
+  border: none;
+  height: 100%;
+  color: #154072;
+  font-family: "Gugi";
+  font-size: 2vw;
+  margin-bottom: 8%;
+  padding: 0px;
 }
 
 /* Profil */

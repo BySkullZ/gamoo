@@ -5,14 +5,14 @@ import Navbar from "./Navbar";
 import oeil_ouvert from "../images/oeil_ouvert.png"
 import oeil_ferme from "../images/oeil_ferme.png"
 
-function Connexion() {
+function MailOublie() {
     const navigate = useNavigate();
     const [error, setError] = useState("");
     const [state, setState] = useState({mail_user: "", password_user: ""});
     const [showPassword, setShowPassword] = useState(false);
 
     async function logIn() {
-        const res = await axios.post(`https://gamoo.alwaysdata.net/user/`, state);
+        const res = await axios.post(`https://gamoo.alwaysdata.net/user/`, {mail_user: state["mail_user"], password_user: state["password_user"]});
         if (res.data.length > 0) {
             localStorage.setItem("userId", res.data[0].id_user)
             navigate(`/`);
@@ -44,7 +44,7 @@ function Connexion() {
             <div className="d-flex">
                 <div className="connexion-card ms-auto w-50 font-gugi">
                     <div className="bg-yellow py-2 mb-4">
-                        <h1 className="text-decoration-underline mx-auto mt-2 mb-5">Connexion</h1>
+                        <h1 className="text-decoration-underline mx-auto mt-2 mb-5">Mot de passe Oublié</h1>
                         {/* ajouter le span underline sur le css */}
                         <h2 className="text-decoration-underline mx-auto fs-3">Mail*</h2>
                         <div className="mb-5">
@@ -70,4 +70,4 @@ function Connexion() {
     )
 }
 
-export default Connexion;
+export default MailOublie;

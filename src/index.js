@@ -4,6 +4,8 @@ import './index.css';
 import Home from './Home';
 import Messagerie from './pages/Messagerie';
 import Connexion from './pages/Connexion';
+import MdpOublie from './pages/MdpOublie';
+import MailOublie from './pages/MailOublie';
 import Inscription from './pages/Inscription';
 import Profil from './pages/Profil';
 import reportWebVitals from './reportWebVitals';
@@ -22,8 +24,16 @@ const router = createHashRouter([
     element: <Messagerie/>,
   },
   {
-    path: "connexion",
+    path: "/connexion",
     element: <Connexion/>,
+  },
+  {
+    path: "/mdp-oublie",
+    element: <MdpOublie/>,
+  },
+  {
+    path: "/mail-oublie",
+    element: <MailOublie/>,
   },
   {
     path: "/inscription",
