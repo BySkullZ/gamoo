@@ -133,7 +133,7 @@ function Inscription() {
                                 <div className="mb-3">
                                     <input onChange={handleChange} className="input mx-auto" type="email" name="mail_user" required/>
                                 </div>
-                                <h2 className="text-decoration-underline mx-auto fs-3">Mot de passe*</h2>
+                                <h2 className="text-decoration-underline mx-auto fs-3">Vérification Mot de passe*</h2>
                                 <div className="mb-3 mx-auto">
                                     <input onChange={handleChange} className="password-input ms-auto" type={showPassword ? "text" : "password"} id="password" name="password_user" minLength="8" required/>
                                     <img className="me-auto" src={showPassword ? oeil_ferme : oeil_ouvert} alt="" id="eye" onClick={() => setShowPassword(!showPassword)}/>

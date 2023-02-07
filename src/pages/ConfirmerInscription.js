@@ -11,7 +11,7 @@ function ReinitialiserMdp() {
 
     useEffect(() => {
         async function getData() {
-            const res = await axios.get(`https://gamoo.alwaysdata.net/tokens/${token}`).then((res) => {
+            await axios.get(`https://gamoo.alwaysdata.net/tokens/${token}`).then((res) => {
                 if (res.data.length > 0) {
                     setWToken(res.data[0]);
                     confirmUser(res.data[0]);
@@ -19,7 +19,7 @@ function ReinitialiserMdp() {
             });
         }
         getData();
-    }, []);
+    }, [token]);
 
     async function confirmUser(data) {
         const res = await axios.post(`https://gamoo.alwaysdata.net/confirm-signup/`, {id_user: data.id_user, token: data.token_value});
@@ -29,7 +29,7 @@ function ReinitialiserMdp() {
         }
     }
 
-    if (wToken && wToken.length === 0 || wToken.type !== "signup" || !success) {
+    if ((wToken && wToken.length === 0) || wToken.type !== "signup" || !success) {
         return (
             <div>
                 <Navbar/>

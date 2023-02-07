@@ -55,6 +55,7 @@ body {
   margin-left: 7px;
   display: inline-block;
 }
+
 .sous-menu {
   margin-top: var(--hauteur-menu);
   width: 25%;
