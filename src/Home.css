@@ -265,15 +265,31 @@ nav > ul > li:hover > a{
   list-style: none;
 }
 
+.edit-about-button {
+  border: none;
+  background-color: transparent;
+  width: 30px;
+}
+
+.edit-about-button img {
+  width: 30px;
+}
+
 /* Home */
 
-.home_post {
+.home-post {
   background-color: #FFB82F;
   width: 50vw;
   height: 100px;
   margin-bottom: 0px;
   
 }
+
+.home-post::placeholder {
+  color: black;
+  vertical-align: top;
+}
+
 .popup {
   display: none;
   position: fixed;
@@ -282,11 +298,19 @@ nav > ul > li:hover > a{
   border: 3px solid #f1f1f1;
   z-index: 9;
 }
-.messagepopup {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  right: 15px;
-  border: 3px solid #f1f1f1;
-  z-index: 9;
+
+.post {
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  list-style: none;
+  height: 30vh;
+  position: relative;
+}
+
+.post-shadow {
+  background-color: #030A4B;
+  border-radius: 10px;
+  padding-bottom: 5%;
 }

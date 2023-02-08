@@ -10,6 +10,7 @@ import ReinitialiserMdp from './pages/ReinitialiserMdp';
 import Inscription from './pages/Inscription';
 import ConfirmerInscription from './pages/ConfirmerInscription';
 import Profil from './pages/Profil';
+import Parametres from './pages/Parametres';
 import Appel from './pages/Appel';
 import reportWebVitals from './reportWebVitals';
 import { createHashRouter, RouterProvider } from "react-router-dom";
@@ -53,6 +54,10 @@ const router = createHashRouter([
   {
     path: "/profil/:id",
     element: <Profil/>,
+  },
+  {
+    path: "/parametres",
+    element: <Parametres/>,
   },
   {
     path: "/appel",

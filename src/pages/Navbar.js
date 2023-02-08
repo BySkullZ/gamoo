@@ -70,7 +70,11 @@ function Navbar() {
                                                 <p>Profil</p>
                                             </Link>    
                                         </li>
-                                        <li><p>Paramètres et confidentialité</p></li>
+                                        <li>
+                                            <Link to="/parametres" className="text-decoration-none text-black">
+                                                <p>Paramètres et confidentialité</p>
+                                            </Link>
+                                        </li>
                                         <li><p>Aide et assistance</p></li>
                                         <li><p>Affichage et accessibilité</p></li>
                                         <li><p onClick={logOut}>Se déconnecter</p></li>
