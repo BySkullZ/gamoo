@@ -85,7 +85,7 @@ function Messagerie() {
                             {(messagesInfos && messagesInfos.length > 0) ? messagesInfos.map((message, index) => {
                                 return (
                                     <li key={index} className={`message ${parseInt(id) === message.u1id ? "message-self" : "message-friend"}`}>
-                                        {parseInt(id) !== message.u1id && <img src={friendInfos.u2pfp} alt="" className="message-profil-picture me-2"/>}
+                                        {parseInt(id) !== message.u1id && <img src={friendInfos.userImg} alt="" className="message-profil-picture me-2"/>}
                                         <div>
                                             <h2 className="fs-5">{message.u1name}</h2>
                                             <p>{message.content}</p>
