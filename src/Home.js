@@ -5,6 +5,7 @@ import Navbar from './pages/Navbar.js';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { type } from "@testing-library/user-event/dist/type";
+import BouttonMessagerie from "./pages/BouttonMessagerie";
 
 function Home() {
 	const [user, setUser] = useState([]);
@@ -55,7 +56,7 @@ function Home() {
 						<div key={index} className="post-shadow">
 							<div className="d-flex">
 								<img id={`UserImg${index}`} className="profil-picture pt-2 mx-3" src="" alt=""/>
-								<h2 id={`User${index}`} className="text-white mx-3 "></h2>
+								<h2 id={`User${index}`} className="text-white mx-3"></h2>
 							</div>
 							<li className="post">
 								<img src={post.media_post}/>
@@ -67,6 +68,7 @@ function Home() {
 				})}
 			</ul>
 		</div>
+		<BouttonMessagerie/>
     </div>
   );
 }

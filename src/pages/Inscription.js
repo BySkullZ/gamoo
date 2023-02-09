@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as Icon from 'react-bootstrap-icons';
 import axios from "axios";
 import Navbar from "./Navbar";
@@ -7,6 +7,7 @@ import oeil_ouvert from "../images/oeil_ouvert.png"
 import oeil_ferme from "../images/oeil_ferme.png"
 
 function Inscription() {
+    const navigate = useNavigate()
     const [error, setError] = useState("");
     const [state, setState] = useState({
         mail_user: "",
@@ -45,6 +46,10 @@ function Inscription() {
     const [showPassword, setShowPassword] = useState(false);
 
     useEffect(() => {
+        if (localStorage.getItem("userId")) {
+            navigate("/");
+        }
+
         async function getData() {
             const qres = await axios.get(`https://gamoo.alwaysdata.net/questions`);
             const sres = await axios.get(`https://gamoo.alwaysdata.net/styles`);

@@ -6,8 +6,10 @@ import Navbar from "./Navbar";
 
 function BouttonMessagerie() {
     return (
-        <div>
-            <p>bon courage frero</p>
+        <div id="messaging-button">
+            <Link to="/messagerie">
+                <img src="https://icons.veryicon.com/png/o/miscellaneous/personal-image/leaving-a-message-14.png" alt=""/>
+            </Link>
         </div>
     )
 }

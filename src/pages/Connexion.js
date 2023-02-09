@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Navbar from "./Navbar";
@@ -11,11 +11,17 @@ function Connexion() {
     const [state, setState] = useState({mail_user: "", password_user: ""});
     const [showPassword, setShowPassword] = useState(false);
 
+    useEffect(() => {
+        if (localStorage.getItem("userId")) {
+            navigate("/");
+        }
+    });
+
     async function logIn() {
         const res = await axios.post(`https://gamoo.alwaysdata.net/login/`, state);
         if (res.data.length > 0 && res.data[0].verified === 1) {
             localStorage.setItem("userId", res.data[0].id_user)
-            navigate(`/`);
+            navigate("/");
         } else if (res.data.length > 0 && res.data[0].verified === 0) {
             setError("Compte non validé par mail. Veuillez verifier vos mails !")
         } else {

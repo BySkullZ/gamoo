@@ -3,6 +3,7 @@
 body {
   background-color: #FFE6B5 !important;
   overflow-x: hidden;
+  overflow-y: hidden;
   height: 100%;
 }
 
@@ -244,7 +245,9 @@ nav > ul > li:hover > a{
 /* Profil */
 
 .profil-picture {
+  background-color: #154072;
   width: 100px;
+  height: 100px;
   border-radius: 100%;
 }
 
@@ -324,4 +327,90 @@ nav > ul > li:hover > a{
 }
 .titre{
   font-size: 70px;
+}
+
+/* Boutton messagerie */
+
+#messaging {
+  background-color: white;
+  min-height: 100vh;
+}
+
+#messaging-button {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  width: 1vw;
+}
+
+#messaging-button img {
+  width: 10vw;
+  background: white;
+  border-radius: 100%;
+}
+
+#message-area {
+  border-radius: 10px;
+  resize: none;
+}
+
+.friend-list {
+  list-style: none;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.friend-button {
+  background: none;
+  border: none;
+}
+
+.message-list {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 70vh;
+}
+
+.message {
+  display: flex;
+  list-style: none;
+  border-radius: 10px;
+  width: fit-content;
+  min-width: 100px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 2px;
+  margin-bottom: 10px;
+}
+
+.message-profil-picture {
+  background-color: #154072;
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+}
+
+.message-self {
+  background-color: #030A4B;
+  margin-left: auto;
+  margin-right: 1%;
+  color: white;
+}
+
+.message-self h2 {
+  text-align: end;
+}
+
+.message-friend {
+  background-color: #FFB82F;
+  text-align: start;
+}
+
+.button-send {
+  border: none;
+  border-radius: 10px;
+  background-color: #030A4B;
+  color: #FFE6B5;
+  margin-right: 10px;
 }
