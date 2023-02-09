@@ -11,7 +11,8 @@ import Inscription from './pages/Inscription';
 import ConfirmerInscription from './pages/ConfirmerInscription';
 import Profil from './pages/Profil';
 import Parametres from './pages/Parametres';
-import Appel from './pages/Appel';
+// import Appel from './pages/Appel';
+import Notifications from './pages/Notifications';
 import reportWebVitals from './reportWebVitals';
 import { createHashRouter, RouterProvider } from "react-router-dom";
 
@@ -60,9 +61,9 @@ const router = createHashRouter([
     element: <Parametres/>,
   },
   {
-    path: "/appel",
-    element: <Appel/>,
-  },
+    path: "/notifications",
+    element: <Notifications/>,
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

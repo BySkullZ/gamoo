@@ -280,7 +280,7 @@ nav > ul > li:hover > a{
 .home-post {
   background-color: #FFB82F;
   width: 50vw;
-  height: 100px;
+  height: 100px; 
   margin-bottom: 0px;
   
 }
@@ -313,4 +313,15 @@ nav > ul > li:hover > a{
   background-color: #030A4B;
   border-radius: 10px;
   padding-bottom: 5%;
+}
+.notif{
+  background-color: #030A4B;
+  width: 50vw;
+  height: 90px;
+  color: #FFB82F;
+  border-radius: 20px;
+  margin-top:40px
+}
+.titre{
+  font-size: 70px;
 }

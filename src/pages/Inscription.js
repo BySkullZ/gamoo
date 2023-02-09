@@ -165,7 +165,7 @@ function Inscription() {
                                 </div>
                                 <h2 className="text-decoration-underline fs-3">Réponse*</h2>
                                 <div className="mb-3">
-                                    <input onChange={handleChange} className="input" type="text" name="answer_user" minLength="8" required/>
+                                    <input onChange={handleChange} className="input" type="text" name="answer_user" required/>
                                 </div>
                                 <h2 className="text-decoration-underline fs-3">Mail de récupération*</h2>
                                 <div className="mb-3">
@@ -190,7 +190,7 @@ function Inscription() {
                             <div className="col-sm">
                                 <h2 className="text-decoration-underline mx-auto fs-3">Nom d'utilisateur*</h2>
                                 <div className="mb-3">
-                                    <input onChange={handleChange} className="input mx-auto" type="text" name="name_user" required/>
+                                    <input onChange={handleChange} className="input mx-auto" type="text" name="name_user"/>
                                 </div>
                                 <h2 className="text-decoration-underline mx-auto fs-3">Genre</h2>
                                 <div>
