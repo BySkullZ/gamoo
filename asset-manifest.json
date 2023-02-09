@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/gamoo/static/css/main.12a0f2e8.css",
-    "main.js": "/gamoo/static/js/main.9e33e6c0.js",
+    "main.css": "/gamoo/static/css/main.1b88b975.css",
+    "main.js": "/gamoo/static/js/main.eb79964b.js",
     "static/js/787.5a49ef83.chunk.js": "/gamoo/static/js/787.5a49ef83.chunk.js",
     "static/media/Gugi-Regular.ttf": "/gamoo/static/media/Gugi-Regular.ce160b04cc5caef3bf46.ttf",
     "static/media/oeil_ferme.png": "/gamoo/static/media/oeil_ferme.3fafc498f6823caef205.png",
     "static/media/logo_navbar.png": "/gamoo/static/media/logo_navbar.bc5d20715dbfb240fed0.png",
     "index.html": "/gamoo/index.html",
-    "main.12a0f2e8.css.map": "/gamoo/static/css/main.12a0f2e8.css.map",
-    "main.9e33e6c0.js.map": "/gamoo/static/js/main.9e33e6c0.js.map",
+    "main.1b88b975.css.map": "/gamoo/static/css/main.1b88b975.css.map",
+    "main.eb79964b.js.map": "/gamoo/static/js/main.eb79964b.js.map",
     "787.5a49ef83.chunk.js.map": "/gamoo/static/js/787.5a49ef83.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.12a0f2e8.css",
-    "static/js/main.9e33e6c0.js"
+    "static/css/main.1b88b975.css",
+    "static/js/main.eb79964b.js"
   ]
 }
