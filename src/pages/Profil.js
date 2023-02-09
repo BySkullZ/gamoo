@@ -85,8 +85,9 @@ function Profil() {
                                 {friends.map((friend, index) => {
                                     return (
                                         <li key={index}>
-                                            <Link to={parseInt(id) === friend.u1id ? `/profil/${friend.u2id}` : `/profil/${friend.u1id}`} className="text-decoration-none text-align-center">
-                                                <p>{parseInt(id) === friend.u1id ? `${friend.u2name}` : `${friend.u1name}`}</p>
+                                            <Link to={parseInt(id) === friend.u1id ? `/profil/${friend.u2id}` : `/profil/${friend.u1id}`} className="text-decoration-none d-flex align-items-center mx-2 py-2">
+                                                <img src={parseInt(id) === friend.u1id ? `${friend.u2pfp}` : `${friend.u1pfp}`} alt="" className="message-profil-picture"/>
+                                                <p className="ms-4 text-black">{parseInt(id) === friend.u1id ? `${friend.u2name}` : `${friend.u1name}`}</p>
                                             </Link>
                                         </li>
                                     )

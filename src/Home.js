@@ -55,8 +55,8 @@ function Home() {
 					return (
 						<div key={index} className="post-shadow">
 							<div className="d-flex">
-								<img id={`UserImg${index}`} className="profil-picture pt-2 mx-3" src="" alt=""/>
-								<h2 id={`User${index}`} className="text-white mx-3"></h2>
+								<img id={`UserImg${index}`} className="profil-picture my-2 mx-3" src="" alt=""/>
+								<h2 id={`User${index}`} className="text-white mx-3 my-4"></h2>
 							</div>
 							<li className="post">
 								<img src={post.media_post}/>

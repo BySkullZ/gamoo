@@ -281,6 +281,8 @@ nav > ul > li:hover > a{
 /* Home */
 
 .home-post {
+  vertical-align: top;
+  border: none;
   background-color: #FFB82F;
   width: 50vw;
   height: 100px; 
