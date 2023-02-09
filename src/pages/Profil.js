@@ -9,9 +9,10 @@ function Profil() {
     const [userProfil, setUserProfil] = useState([]);
     const [medias, setMedias] = useState([]);
     const [friends, setFriends] = useState([]);
+    const [newUsername, setNewUsername] = useState("");
     const [about, setAbout] = useState("");
+    const [editingUsername, setEditingUsername] = useState(false);
     const [editingAbout, setEditingAbout] = useState(false);
-    const [editingAboutSuccess, setEditingAboutSuccess] = useState(false);
 
     useEffect(() => {
         axios.get(`https://gamoo.alwaysdata.net/profil/${localStorage.getItem("userId")}`).then(res => {setUser(res.data[0]);});
@@ -28,18 +29,24 @@ function Profil() {
             </div>
         )
     }
+    
+    function changeUsername(e) {
+        setNewUsername(e.target.value);
+    }
 
-    function handleChange(e) {
+    function changeAbout(e) {
         setAbout(e.target.value);
     }
 
+    async function updateUsername() {
+       await axios.post(`https://gamoo.alwaysdata.net/update_username/`, {id_user: id, new_username: newUsername});
+        setEditingUsername(false);
+        document.getElementById("username").innerHTML = newUsername
+    }
+
     async function updateAbout() {
-        const res = await axios.post(`https://gamoo.alwaysdata.net/update_about/`, {id_user: id, new_about: about});
+        await axios.post(`https://gamoo.alwaysdata.net/update_about/`, {id_user: id, new_about: about});
         setEditingAbout(false);
-        setEditingAboutSuccess(true);
-        setTimeout(() => {
-            setEditingAboutSuccess(false);
-        }, 3000);
     }
 
     return (
@@ -48,7 +55,12 @@ function Profil() {
             <div className="text-light font-gugi">
                 <div className="profil-banner d-flex vw-100 py-5" style={{backgroundImage: `url(${userProfil.profil_banner_user})`}}>
                     <img className="profil-picture mx-5" src={userProfil.profil_picture_user || "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b8aff023-57ed-49e6-982a-b0cdb786956e/d4z5h7j-5a6ceb7b-95c6-4cd6-8aa4-aaf759249d0b.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2I4YWZmMDIzLTU3ZWQtNDllNi05ODJhLWIwY2RiNzg2OTU2ZVwvZDR6NWg3ai01YTZjZWI3Yi05NWM2LTRjZDYtOGFhNC1hYWY3NTkyNDlkMGIuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.icigU0Tv0i34PGz2npT9Hov5HlIBjMmeDv27JmGCn74"} alt=""/>
-                    <h1 className="text-shadow-yellow my-auto">{userProfil.name_user}</h1>
+                    {!editingUsername && <h1 className="text-shadow-yellow my-auto" id="usernae">{userProfil.name_user}</h1>}
+                    {editingUsername && <input onChange={changeUsername} className="profil-name fs-1" defaultValue={userProfil.name_user}/>}
+                    {editingUsername && <button onClick={updateUsername}>Valider</button>}
+                        {user && user.id_user === parseInt(id) && <button onClick={() => setEditingUsername(!editingUsername)} className="edit-about-button">
+                            <img src="https://www.pngmart.com/files/15/Vector-Feather-PNG-HD.png" alt=""/>
+                        </button>}
                 </div>
                 <div className="container text-center mt-5">
                     <div className="row align-items-start">
@@ -60,7 +72,7 @@ function Profil() {
                             </h2>
                             {editingAbout && 
                                 <div>
-                                    <textarea className="text-blue bg-light w-100 text-center" defaultValue={userProfil?.about_user || "Cet utilisateur n'a pas d'à propos."} onChange={handleChange} maxLength="200"/>
+                                    <textarea className="text-blue bg-light w-100 text-center" defaultValue={userProfil?.about_user || "Cet utilisateur n'a pas d'à propos."} onChange={changeAbout} maxLength="200"/>
                                     <button onClick={updateAbout}>Valider</button>
                                 </div>
                             } 

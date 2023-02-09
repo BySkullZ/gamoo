@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import Navbar from "./Navbar";
 import BouttonMessagerie from "./BouttonMessagerie";
@@ -15,7 +14,7 @@ function Messagerie() {
     useEffect(() => {
         axios.get(`https://gamoo.alwaysdata.net/profil/${id}`).then(res => {setUser(res.data[0]);});
         axios.get(`https://gamoo.alwaysdata.net/friends/${id}`).then(res => {setFriends(res.data);});
-    }, [messagesInfos, friendInfos]);
+    }, [id]);
 
     function handleChange(e) {
         setContent(e.target.value);
@@ -30,7 +29,7 @@ function Messagerie() {
     }
 
     async function getLastMessage(user1, user2, index) {
-        const promise = await axios.get(`https://gamoo.alwaysdata.net/last_message/?u1=${user1}&u2=${user2}`).then((res) => {
+        await axios.get(`https://gamoo.alwaysdata.net/last_message/?u1=${user1}&u2=${user2}`).then((res) => {
             if (res.data.length > 0) {
                 document.getElementById(`LastMessage${index}`).innerHTML = res.data[0].content || ""
             }

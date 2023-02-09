@@ -251,6 +251,17 @@ nav > ul > li:hover > a{
   border-radius: 100%;
 }
 
+.profil-name {
+  background: none;
+  border: none;
+  color: white;
+  width: fit-content;
+}
+
+.profil-name::placeholder {
+  text-shadow: #FFE6B5 1px 0 10px;
+}
+
 .profil-banner {
   background-color: grey;
   background-repeat: no-repeat;
