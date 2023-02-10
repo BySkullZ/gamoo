@@ -13,8 +13,8 @@ function Home() {
 
 	useEffect(() => {
 		axios.get(`https://gamoo.alwaysdata.net/profil/${localStorage.getItem("userId") || 0}`).then(res => {setUser(res.data[0]);});
-    	axios.get(`https://gamoo.alwaysdata.net/posts`).then(res => {setPosts(res.data);});
-	}, []);
+    	axios.get(`https://gamoo.alwaysdata.net/posts`).then(res => {setPosts(res.data.reverse());});
+	}, [posts]);
 
 	function handleChange(e) {
         setContent(e.target.value);

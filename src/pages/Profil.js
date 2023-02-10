@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import Navbar from "./Navbar";
+import BouttonMessagerie from "./BouttonMessagerie";
 
 function Profil() {
     const { id } = useParams();
@@ -109,6 +110,7 @@ function Profil() {
                     </div>
                 </div>
             </div>
+            <BouttonMessagerie/>
         </div>
     )
 }
